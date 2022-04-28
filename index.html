@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/App.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="main">
+            <h2>App Weather</h2>
+        </div>
+    </main>
+    
+    <div class="container">
+        <h3>Consulte el clima de una ciudad</h3>
+        <select name="ciudad" id="select" onchange="showNewCity()">
+                <option disable selected value="0">Seleccione una ciudad</option>
+                <option value="else">( + Agregar ciudad )</option>
+                <option value="ros">Rosario</option>
+                <option value="caba">Buenos Aires</option>
+                <option value="cor">Córdoba</option>
+            </select>
+        <div id="newCity" class="hide-button">
+            <label for="new-city"><input type="text" placeholder="¿Nombre de la ciudad?" id="addNew"><button onclick="addCity()">Agregar ciudad</button></label>
+        </div>
+        <!-- <input type="button" value="Buscar" onclick="showResult()">  -->
+    </div>
+    <div class="button">
+        <button button type="button" onclick="showResult()">Buscar</button>
+    </div>
+    <div id="details" class="presentation">
+        <div class="result" id="result"></div>
+        <div class="result" id="description"></div>
+        <div class="result" id="temp"></div>
+        <div class="secondary">
+            <div class="result2" id="humidity"></div>
+            <div class="result2" id="wind"></div>
+            <div class="result2" id="pressure"></div>
+        </div>
+    </div>
+    <div>
+        <p id="leyend"></p>
+    </div>
+</body>
+
+</html>
