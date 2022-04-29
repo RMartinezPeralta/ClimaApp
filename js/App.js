@@ -35,8 +35,8 @@ const showResult = async () => {
       const res = await fetch(url);
       const data = await res.json();
 
-      console.log(data); // TODA LA DATA DE LA CIUDAD - - - CONSOLE.LOG() BORRAR - - - )
-      form.style.display = "block"; // show Form
+      console.log(data); // - - - Objeto de la ciudad.
+      form.style.display = "block"; // Form
       showCity.textContent = data.name.toUpperCase();
       let temp = Math.floor(data.main.temp);
       showTemp.textContent = `${temp} ºC`;
@@ -88,8 +88,6 @@ const validate2 = () => {
 const validate3 = () => {
   let bool = true;
   addNew.length > 0 ? (bool = true) : (bool = false);
-  console.log(bool); // asdasdasdasdlaksdakjfhaksahsfkalsfhaksfhalskfagslkas
-  // Y ENTRADA TIPO CHAR/STRING?
   return bool;
 };
 
