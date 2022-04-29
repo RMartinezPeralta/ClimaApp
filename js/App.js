@@ -87,24 +87,31 @@ const validate2 = () => {
 // - - - VALIDACION CIUDAD NO VACIA - - - )
 const validate3 = () => {
   let bool = true;
-  addNew.length > 0 ? (bool = true) : (bool = false);
+  addNew.value.length > 0 ? (bool = true) : (bool = false);
   return bool;
 };
 
 // - - - AÑADIR NUEVA CIUDAD - - - )
 function addCity() {
-  if (validate()) {
-    city.options.add(new Option(addNew.value));
-    alert(`Se añadió ${addNew.value} a la lista de ciudades.`);
-    localStorage.setItem("name", addNew.value);
-    let addedCity = localStorage.getItem("name"); // ciudad capturada
-    cities = { ...cities, [addedCity]: addedCity }; // añadir nueva ciudad
-    button.style.display = "none";
-    city.value = 0;
-    addNew.innerHTML = ""; // limpieza del label * NO FUNCIONA *
-    console.log(Object.values(cities)); //  CONSOLE.LOG() BORRAR -------------------------------------)
+  if (validate3()) {
+    if (validate()) {
+      city.options.add(new Option(addNew.value));
+      form.style.display = "none";
+      info.style.display = "block";
+      info.innerHTML = `Se añadió ${addNew.value} a la lista de ciudades.`;
+      localStorage.setItem("name", addNew.value);
+      let addedCity = localStorage.getItem("name"); // ciudad capturada
+      cities = { ...cities, [addedCity]: addedCity }; // añadir nueva ciudad
+      button.style.display = "none";
+      city.value = 0;
+      console.log(Object.values(cities)); //  CONSOLE.LOG() BORRAR -------------------------------------)
+    } else {
+      info.style.display = "block";
+      info.innerHTML = `${addNew.value} ya fue añadida a la lista de ciudades.`;
+    }
   } else {
-    alert(`${addNew.value} ya fue añadida a la lista de ciudades.`);
+    info.style.display = "block";
+    info.innerHTML = `Debe completar el nombre de la ciudad.`;
   }
 }
 
@@ -112,6 +119,8 @@ function addCity() {
 function showNewCity() {
   if (cities[city.value] == cities.else) {
     button.style.display = "block";
+    form.style.display = "none";
+    addNew.value = ""; // limpieza del label
   } else {
     button.style.display = "none";
   }
