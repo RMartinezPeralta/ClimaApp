@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 150px;
+  padding: 10px 50px;
   margin: 50px;
   background-image: linear-gradient(
     260deg,
@@ -19,7 +19,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   padding: 10px;
 }
 
@@ -82,3 +82,34 @@ body {
   padding-top: 25px;
   padding-bottom: 25px;
 }
+
+/* For mobile phones: */
+@media only screen and (max-width: 720px) {
+
+  h3{
+    visibility: hidden;
+  }
+
+  h3:after {
+    content: 'Consulte una ciudad';
+    visibility: visible;
+    display: block;
+    
+  }
+
+  .container {
+    width: 50%;
+    justify-content: center;
+    font-size: 16px;
+    
+  }
+
+  .result2 {
+    width: 80%;
+    font-size: 16px;
+    justify-content: center;
+  }
+  
+  #description {
+    padding: 5px;
+  }
