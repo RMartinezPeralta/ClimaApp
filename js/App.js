@@ -29,7 +29,7 @@ const showResult = async () => {
     console.log(ciudad); //  CONSOLE.LOG() BORRAR - - - )
     // - - - API - - - Datos ciudad seleccionada.  ↓
     const key = "7badf1eb58821eac6385154e0d479f41";
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&units=metric&appid=${key}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&units=metric&appid=${key}`;
 
     try {
       const res = await fetch(url);
